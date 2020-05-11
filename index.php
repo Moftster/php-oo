@@ -16,20 +16,16 @@ class Person {
         return "Hello my name is " . $this->firstName . " " . $this->lastName;
     }
 
-    public function myGender(){
-        if($this->gender == 'f') {
-            return "I am a female";
-        } else {
-            return "I am a male";
-        }
+    public function getGender(){
+        return $this->gender;
     }
 }
 
 $tom = new Person('Tom', 'Ben', 'm');
 $jane = new Person('Jane', 'Groves', 'f');
 
-echo $tom->sayHello();
-echo $jane->myGender();
+// echo $tom->sayHello();
+echo $jane->sayHello() . ". Gender: " . $jane->getGender();
 
 echo "\n";
 // echo $tom->gender;
