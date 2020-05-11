@@ -1,10 +1,11 @@
 <?php
 
-class Employee {
+class Employee extends Person {
     public $jobTitle;
 
-    public function __construct($jobTitle) {
+    public function __construct($jobTitle, $firstName, $lastName, $gender = 'f') {
         $this->jobTitle = $jobTitle;
+        parent::__construct($firstName, $lastName, $gender);
     }
 
     public function getJobTitle(){
@@ -33,6 +34,12 @@ class Person {
     }
 }
 
+$jane = new Employee('Backend developer', 'Jane', 'Groves');
+echo $jane->getJobTitle();
+echo "\n";
+echo $jane->getGender();
+echo "\n";
+echo $jane->sayHello();
 echo "\n";
 
 ?>
