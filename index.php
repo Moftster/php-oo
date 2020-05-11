@@ -1,5 +1,17 @@
 <?php
 
+class Employee {
+    public $jobTitle;
+
+    public function __construct($jobTitle) {
+        $this->jobTitle = $jobTitle;
+    }
+
+    public function getJobTitle(){
+        return $this->jobTitle;
+    }
+}
+
 class Person {
 
     public $firstName;
@@ -21,13 +33,6 @@ class Person {
     }
 }
 
-$tom = new Person('Tom', 'Ben', 'm');
-$jane = new Person('Jane', 'Groves', 'f');
-
-// echo $tom->sayHello();
-echo $jane->sayHello() . ". Gender: " . $jane->getGender();
-
 echo "\n";
-// echo $tom->gender;
 
 ?>
