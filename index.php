@@ -1,7 +1,7 @@
 <?php
 
 class Person {
-    
+
     public $firstName;
     public $lastName;
     public $gender;
@@ -20,6 +20,8 @@ class Person {
 $tom = new Person('Tom', 'Ben', 'm');
 
 echo $tom->sayHello();
+
+echo "\n";
 // echo $tom->gender;
 
 ?>
