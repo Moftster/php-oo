@@ -2,7 +2,7 @@
 
 class Employee extends Person {
 
-    static $jobNumber = 100;
+    static $payeNumber = 100;
 
     const COMPANY_NAME = 'ACME';
 
@@ -11,10 +11,16 @@ class Employee extends Person {
     // @var string Job Title
     //     
     public $jobTitle;
-    private $employeeNumber;
+    private static $employeeNumber = 10;
+
+    public static function generatePayslip(){
+        // return self::$payeNumber;
+        return self::$bloodType;
+    }
 
     public function __construct($jobTitle, $firstName, $lastName, $gender = 'f') {
         $this->jobTitle = $jobTitle;
+
         // echo parent::EYE_COLOUR;
         parent::__construct($firstName, $lastName, $gender);
     }
@@ -38,6 +44,7 @@ class Person {
 
     const EYE_COLOUR = "Brown";
 
+    protected static $bloodType = "A+";
     protected $firstName;
     public $lastName;
     public $gender;
@@ -55,9 +62,5 @@ class Person {
     }
 }
 
-$jane = new Employee('Backend dev', 'Jane', 'Groves');
-
-echo Employee::$jobNumber;
-echo "\n";
-
+echo Employee::generatePayslip();
 ?>
