@@ -2,6 +2,8 @@
 
 class Employee extends Person {
 
+    static $jobNumber = 100;
+
     const COMPANY_NAME = 'ACME';
 
     // 
@@ -13,7 +15,7 @@ class Employee extends Person {
 
     public function __construct($jobTitle, $firstName, $lastName, $gender = 'f') {
         $this->jobTitle = $jobTitle;
-        echo parent::EYE_COLOUR;
+        // echo parent::EYE_COLOUR;
         parent::__construct($firstName, $lastName, $gender);
     }
 
@@ -44,7 +46,7 @@ class Person {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->gender = $gender;
-        echo self::EYE_COLOUR;
+        // echo self::EYE_COLOUR;
 
     }
 
@@ -55,7 +57,7 @@ class Person {
 
 $jane = new Employee('Backend dev', 'Jane', 'Groves');
 
-// echo Employee::EYE_COLOUR;
+echo Employee::$jobNumber;
 echo "\n";
 
 ?>
