@@ -2,16 +2,18 @@
 
 class Employee extends Person {
 
-// 
-// Title of job
-// @var string Job Title
-//     
+    const COMPANY_NAME = 'ACME';
 
-    private $jobTitle;
+    // 
+    // Title of job
+    // @var string Job Title
+    //     
+    public $jobTitle;
     private $employeeNumber;
 
     public function __construct($jobTitle, $firstName, $lastName, $gender = 'f') {
         $this->jobTitle = $jobTitle;
+        echo self::COMPANY_NAME;
         parent::__construct($firstName, $lastName, $gender);
     }
 
@@ -48,12 +50,8 @@ class Person {
 }
 
 $jane = new Employee('Backend dev', 'Jane', 'Groves');
-$jane->jobTitle = 'tester';
-$jane->employeeNumber = 1234;
 
-$jane->
-echo $jane->jobTitle;
+echo Employee::COMPANY_NAME;
 echo "\n";
-echo $jane->employeeNumber;
 
 ?>
