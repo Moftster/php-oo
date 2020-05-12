@@ -16,11 +16,17 @@ class Employee extends Person {
     public function getJobTitle(){
         return $this->jobTitle;
     }
+
+    public function sayHello(){
+        $message = "Hello my name is " . $this->firstName . " " . $this->lastName . "\n";
+        $message .= "My job title is " . $this->jobTitle;
+        return $message;
+    }
 }
 
 class Person {
 
-    public $firstName;
+    protected $firstName;
     public $lastName;
     public $gender;
 
@@ -30,21 +36,13 @@ class Person {
         $this->gender = $gender;
     }
 
-    private function sayHello(){
-        return "Hello my name is " . $this->firstName . " " . $this->lastName;
-    }
-
     public function getGender(){
         return $this->gender;
     }
 }
 
-$jane = new Employee('tester', 'Jane', 'Groves', 'm');
+$jane = new Employee('tester', 'Jane', 'Groves');
 
-echo $jane->getJobTitle();
-
-echo $jane->sayHello();
-
-// echo "\n";
+echo $jane->lastName;
 
 ?>
