@@ -5,12 +5,12 @@ class Employee extends Person {
     private $jobTitle;
 
     public function __construct($jobTitle, $firstName, $lastName, $gender = 'f') {
-        $this->jobTitle = $jobTitle;
+        $this->setJobTitle($jobTitle);
         parent::__construct($firstName, $lastName, $gender);
     }
 
     public function setJobTitle($jobTitle){
-        $this->jobTitle = $jobTitle;
+        $this->jobTitle = ucfirst($jobTitle);
     }
 
     public function getJobTitle(){
@@ -30,7 +30,7 @@ class Person {
         $this->gender = $gender;
     }
 
-    public function sayHello(){
+    private function sayHello(){
         return "Hello my name is " . $this->firstName . " " . $this->lastName;
     }
 
@@ -39,18 +39,12 @@ class Person {
     }
 }
 
-$jane = new Employee('Backend developer', 'Jane', 'Groves', 'm');
-
-// $jane->jobTitle = 'Frontend developer';
-
-$jane->setJobTitle("Dish washer");
+$jane = new Employee('tester', 'Jane', 'Groves', 'm');
 
 echo $jane->getJobTitle();
-// echo $jane->jobTitle;
-echo "\n";
-// echo $jane->getGender();
+
+echo $jane->sayHello();
+
 // echo "\n";
-// echo $jane->sayHello();
-echo "\n";
 
 ?>
