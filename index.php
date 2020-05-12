@@ -1,7 +1,12 @@
 <?php
 
 class Employee extends Person {
-    
+
+// 
+// Title of job
+// @var string Job Title
+//     
+
     private $jobTitle;
     private $employeeNumber;
 
@@ -44,7 +49,9 @@ class Person {
 
 $jane = new Employee('Backend dev', 'Jane', 'Groves');
 $jane->jobTitle = 'tester';
-$jane->employeeNumber = '1234';
+$jane->employeeNumber = 1234;
+
+$jane->
 echo $jane->jobTitle;
 echo "\n";
 echo $jane->employeeNumber;
