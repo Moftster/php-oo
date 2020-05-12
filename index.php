@@ -3,6 +3,7 @@
 class Employee extends Person {
     
     private $jobTitle;
+    private $employeeNumber;
 
     public function __construct($jobTitle, $firstName, $lastName, $gender = 'f') {
         $this->jobTitle = $jobTitle;
@@ -10,7 +11,7 @@ class Employee extends Person {
     }
 
     public function __set($name, $value) {
-        $this->$name = $value;
+        $this->$name = ucfirst($value);
     } 
 
     public function __get($name) {
@@ -43,6 +44,9 @@ class Person {
 
 $jane = new Employee('Backend dev', 'Jane', 'Groves');
 $jane->jobTitle = 'tester';
+$jane->employeeNumber = '1234';
 echo $jane->jobTitle;
+echo "\n";
+echo $jane->employeeNumber;
 
 ?>
